@@ -1,0 +1,34 @@
+<%- include("header") -%>
+
+    <div class="box1" id="heading">
+        <h1>Items</h1>
+    </div>
+
+    <div class="box">
+
+        <% newListItems.map((item) => { %>
+            <form action="/delete" method="POST">
+                <div class="item">
+                    <div class="round">
+
+                        <input type="checkbox" name="checkbox" value="<%=item._id %>"
+                         onchange="this.form.submit()"
+                            id="checkbox">
+
+                        <label for="checkbox"></label>
+                    </div>
+                    <p>
+                        <%= item.name %>
+                    </p>
+                    <br>
+                </div>
+            </form>
+            <% }); %>
+
+                <form class="item" action="/" method="POST">
+                    <input type="text" name="n" placeholder="new">
+                    <hr>
+                    <button id="b" type="submit" <span id="s2"></span>+</span></button>
+                </form>
+
+    </div>
